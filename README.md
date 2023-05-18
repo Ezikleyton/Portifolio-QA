@@ -1,4 +1,6 @@
 # Portifolio-QA
-Portifolio contendo alguns testes com Robot. 
-Utilizei a Library Selenium para executar testes no site da amazon
-A criação dos testes ainda esta em andamento.
+Contem projetos de automação de testes com Framework Robot. Os testes visam checar algumas funcionalidades de sites variados, a fim de adquirir mais conhecimento na area de testes.
+
+Os arquivos estao ogranizados por Funcionalidades, onde cada suite de teste conta com um arquivo de Keywords dedicados aquela funcionalidade.
+
+Futuramente testarei funcionalidades e sites diferentes...
