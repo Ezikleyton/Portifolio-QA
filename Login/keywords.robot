@@ -79,12 +79,10 @@ Então o site deve exibir uma mensagem de erro "${mensagem_erro}"
     Page Should Contain    text=${mensagem_erro}
 
 E preencho o campo de senha incorretamente   
-
-Então o site deve exibir uma mensagem de erro indicando que a senha está incorreta
-   
+  
 E preencho o campo de senha com senhas diferentes
     
-Então o site deve exibir uma mensagem de erro indicando que as senhas são diferentes
+Então o site deve exibir uma mensagem de erro indicando que "${MENSAGEM_ERRO}"
 
     
 #Alert Should Be Present    Insira seu nome       

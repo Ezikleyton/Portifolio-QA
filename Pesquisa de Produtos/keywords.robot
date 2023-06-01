@@ -15,7 +15,7 @@ Dado que estou na página inicial da Amazon
     Go To    ${URL_AMAZON}
     Maximize Browser Window
 
-Quando eu pesquiso por um produto na barra de pesquisa
+Quando digito um termo de pesquisa na barra de pesquisa
     Wait Until Element Is Visible    ${BARRA_DE_PESQUISA}
     Set Test Variable    ${produto}    Console Xbox Series S
     Input Text    ${BARRA_DE_PESQUISA}    ${produto}
@@ -45,3 +45,15 @@ Então a página de resultados deve uma mensagem de erro
     Sleep    time_=5
     Page Should Contain    text=Nenhum resultado para
     
+Quando digito um código de produto válido na barra de pesquisa
+  
+   
+Então devo ver o produto correspondente ao código de produto nos resultados da pesquisa
+
+E utilizo os filtros disponíveis para refinar a pesquisa
+    
+Então devo ver resultados filtrados de acordo com os critérios especificados nos filtros
+    
+Quando começo a digitar um termo de pesquisa parcial na barra de pesquisa
+
+ Então devo ver uma lista de sugestões automáticas relacionadas ao termo de pesquisa parcialmente digitado
