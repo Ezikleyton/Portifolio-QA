@@ -1,152 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20230724 11:11:27.329" rpa="false" schemaversion="3">
-<suite id="s1" name="TC-01" source="c:\Users\ezikl\OneDrive\Documentos\GitHub\Testes Amazon\Portifolio-QA\Carrinho\TC-01.robot">
-<test id="s1-t1" name="Teste case 3:Alterar a quantidade de um produto no carrinho" line="22">
-<kw name="Dado que adicionei um produto ao carrinho" library="keywords">
-<kw name="Dado que estou na página inicial da Amazon" library="keywords">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20230724 13:19:34.527" rpa="false" schemaversion="3">
+<suite id="s1" name="Credenciais" source="c:\Users\ezikl\OneDrive\Documentos\GitHub\Testes Amazon\Portifolio-QA\Amazon testes\Credenciais\credenciais.robot">
+<test id="s1-t1" name="TC-01 - Verificar login com Email e senha valida" line="9">
+<kw name="Dado que estou na página de login" library="keywords">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230724 11:11:27.565" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20230724 11:11:27.564" endtime="20230724 11:11:28.638"/>
+<msg timestamp="20230724 13:19:34.762" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230724 13:19:34.762" endtime="20230724 13:19:35.851"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230724 11:11:28.638" endtime="20230724 11:11:28.763"/>
+<status status="PASS" starttime="20230724 13:19:35.852" endtime="20230724 13:19:35.976"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
-<arg>${URL_AMAZON}</arg>
+<arg>${URL_LOGIN}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230724 11:11:28.764" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
-<status status="PASS" starttime="20230724 11:11:28.763" endtime="20230724 11:11:33.484"/>
+<msg timestamp="20230724 13:19:35.977" level="INFO">Opening url 'https://www.amazon.com.br/ap/signin?openid.pape.max_auth_age=0&amp;openid.return_to=https%3A%2F%2Fwww.amazon.com.br%2Fs%3Fk%3Damaozn%26adgrpid%3D107062859646%26hvadid%3D595851860839%26hvdev%3Dc%26hvlocphy%3D1031647%26hvnetw%3Dg%26hvqmt%3De%26hvrand%3D2812429037799619114%26hvtargid%3Dkwd-141123430%26hydadcr%3D5661_13215724%26tag%3Dhydrbrgk-20%26ref%3Dnav_ya_signin&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=brflex&amp;openid.mode=checkid_setup&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;'</msg>
+<status status="PASS" starttime="20230724 13:19:35.976" endtime="20230724 13:19:36.961"/>
 </kw>
-<status status="PASS" starttime="20230724 11:11:27.564" endtime="20230724 11:11:33.484"/>
+<status status="PASS" starttime="20230724 13:19:34.761" endtime="20230724 13:19:36.961"/>
 </kw>
-<kw name="Quando pesquiso pelo produto &quot;Nome do Produto&quot;" library="keywords">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${BARRA_DE_PESQUISA}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230724 11:11:33.485" endtime="20230724 11:11:33.530"/>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${produto}</arg>
-<arg>Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20230724 11:11:33.531" level="INFO">${produto} = Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta</msg>
-<status status="PASS" starttime="20230724 11:11:33.530" endtime="20230724 11:11:33.531"/>
+<kw name="Quando insiro um e-mail válido" library="keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>locator=${EMAIL_LOGIN}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230724 13:19:36.963" endtime="20230724 13:19:36.978"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${BARRA_DE_PESQUISA}</arg>
-<arg>${produto}</arg>
+<arg>locator=${EMAIL_LOGIN}</arg>
+<arg>text=testes@testes.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230724 11:11:33.532" level="INFO">Typing text 'Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta' into text field '//input[contains(@type,'text')]'.</msg>
-<status status="PASS" starttime="20230724 11:11:33.532" endtime="20230724 11:11:33.864"/>
+<msg timestamp="20230724 13:19:36.979" level="INFO">Typing text 'testes@testes.com' into text field '//input[@type='email'][contains(@id,'email')]'.</msg>
+<status status="PASS" starttime="20230724 13:19:36.978" endtime="20230724 13:19:37.091"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>locator=${BOTAO_DE_PESQUISA}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230724 11:11:33.865" level="INFO">Clicking button '//input[contains(@type,'submit')]'.</msg>
-<status status="PASS" starttime="20230724 11:11:33.864" endtime="20230724 11:11:33.994"/>
+<status status="PASS" starttime="20230724 13:19:36.962" endtime="20230724 13:19:37.092"/>
 </kw>
-<status status="PASS" starttime="20230724 11:11:33.485" endtime="20230724 11:11:33.995"/>
-</kw>
-<kw name="Então a página de resultados deve exibir os produtos relacionados à pesquisa realizada" library="keywords">
+<kw name="E clico no botão de continuar" library="keywords">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>locator=//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'${produto}')]</arg>
+<arg>locator=${CONTINUAR_LOGIN}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230724 11:11:33.996" endtime="20230724 11:11:35.656"/>
+<status status="PASS" starttime="20230724 13:19:37.093" endtime="20230724 13:19:37.116"/>
 </kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>locator=//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'${produto}')]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230724 11:11:35.668" level="INFO">Current page contains element '//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta')]'.</msg>
-<status status="PASS" starttime="20230724 11:11:35.657" endtime="20230724 11:11:35.668"/>
-</kw>
-<status status="PASS" starttime="20230724 11:11:33.995" endtime="20230724 11:11:35.669"/>
-</kw>
-<kw name="E adiciono o produto ao carrinho" library="keywords">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'${produto}')]</arg>
+<arg>locator=${CONTINUAR_LOGIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230724 11:11:35.670" level="INFO">Clicking element '//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta')]'.</msg>
-<status status="PASS" starttime="20230724 11:11:35.669" endtime="20230724 11:11:39.272"/>
+<msg timestamp="20230724 13:19:37.117" level="INFO">Clicking element '//*[@id="continue"]'.</msg>
+<status status="PASS" starttime="20230724 13:19:37.117" endtime="20230724 13:19:38.009"/>
 </kw>
+<status status="PASS" starttime="20230724 13:19:37.092" endtime="20230724 13:19:38.010"/>
+</kw>
+<kw name="E insiro uma senha válida" library="keywords">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>locator=${BOTAO_CARRINHO}</arg>
+<arg>locator=${CAMPO_SENHA}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230724 11:11:39.273" endtime="20230724 11:11:39.296"/>
+<status status="PASS" starttime="20230724 13:19:38.012" endtime="20230724 13:19:38.038"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=${BOTAO_CARRINHO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230724 11:11:39.297" level="INFO">Clicking element '//input[contains(@name,'submit.add-to-cart')]'.</msg>
-<status status="PASS" starttime="20230724 11:11:39.297" endtime="20230724 11:11:40.288"/>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=${CAMPO_SENHA}</arg>
+<arg>password=testestestes</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230724 13:19:38.039" level="INFO">Typing password into text field '//input[@type='password'][contains(@id,'password')]'.</msg>
+<msg timestamp="20230724 13:19:38.074" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230724 13:19:38.126" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230724 13:19:38.038" endtime="20230724 13:19:38.126"/>
 </kw>
-<status status="PASS" starttime="20230724 11:11:35.669" endtime="20230724 11:11:40.289"/>
+<status status="PASS" starttime="20230724 13:19:38.011" endtime="20230724 13:19:38.127"/>
 </kw>
-<status status="PASS" starttime="20230724 11:11:27.563" endtime="20230724 11:11:40.289"/>
-</kw>
-<kw name="E que estou na página do carrinho" library="keywords">
+<kw name="E clico no botão de login" library="keywords">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>locator=//a[@data-csa-c-type='button']</arg>
+<arg>locator=${BOTAO_FAZER_LOGIN}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230724 11:11:40.291" endtime="20230724 11:11:40.339"/>
+<status status="PASS" starttime="20230724 13:19:38.127" endtime="20230724 13:19:38.149"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=//a[@data-csa-c-type='button']</arg>
+<arg>locator=${BOTAO_FAZER_LOGIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230724 11:11:40.340" level="INFO">Clicking element '//a[@data-csa-c-type='button']'.</msg>
-<status status="PASS" starttime="20230724 11:11:40.340" endtime="20230724 11:11:42.244"/>
+<msg timestamp="20230724 13:19:38.150" level="INFO">Clicking element '//input[contains(@tabindex,'3')]'.</msg>
+<status status="PASS" starttime="20230724 13:19:38.149" endtime="20230724 13:19:38.215"/>
 </kw>
-<status status="PASS" starttime="20230724 11:11:40.290" endtime="20230724 11:11:42.244"/>
+<status status="PASS" starttime="20230724 13:19:38.127" endtime="20230724 13:19:38.215"/>
 </kw>
-<kw name="Quando altero a quantidade de produtos para &quot;4&quot;" library="keywords" sourcename="Quando altero a quantidade de produtos para &quot;${quantidade}&quot;">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>locator=//span[@class='a-button-text a-declarative'][contains(.,'Qtd:1')]</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230724 11:11:42.246" endtime="20230724 11:11:42.285"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=//span[@class='a-button-text a-declarative'][contains(.,'Qtd:1')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230724 11:11:42.286" level="INFO">Clicking element '//span[@class='a-button-text a-declarative'][contains(.,'Qtd:1')]'.</msg>
-<status status="PASS" starttime="20230724 11:11:42.285" endtime="20230724 11:11:42.441"/>
-</kw>
+<kw name="Então o site deve ter o usuário logado" library="keywords">
 <kw name="Sleep" library="BuiltIn">
 <arg>time_=1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230724 11:11:43.451" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230724 11:11:42.441" endtime="20230724 11:11:43.452"/>
+<msg timestamp="20230724 13:19:39.226" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230724 13:19:38.216" endtime="20230724 13:19:39.226"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=id:quantity_${quantidade}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230724 11:11:43.452" level="INFO">Clicking element 'id:quantity_4'.</msg>
-<status status="PASS" starttime="20230724 11:11:43.452" endtime="20230724 11:11:43.517"/>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>locator=//*[@id="nav-link-accountList-nav-line-1"]</arg>
+<arg>expected=Olá, ###Nome do usuario esperado###</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230724 13:19:40.019" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230724 13:19:40.020" level="FAIL">Element with locator '//*[@id="nav-link-accountList-nav-line-1"]' not found.</msg>
+<status status="FAIL" starttime="20230724 13:19:39.226" endtime="20230724 13:19:40.025"/>
 </kw>
-<status status="PASS" starttime="20230724 11:11:42.245" endtime="20230724 11:11:43.518"/>
+<status status="FAIL" starttime="20230724 13:19:38.216" endtime="20230724 13:19:40.026"/>
 </kw>
-<kw name="Entao a pagina deve exibir o total de &quot;4&quot; itens" library="keywords" sourcename="Entao a pagina deve exibir o total de &quot;${quantidade}&quot; itens">
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>locator=//span[contains(@id,'sc-subtotal-label-activecart')]</arg>
-<arg>text=${quantidade} itens</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" starttime="20230724 11:11:43.519" endtime="20230724 11:11:44.008"/>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230724 13:19:40.031" endtime="20230724 13:19:42.166"/>
 </kw>
-<status status="PASS" starttime="20230724 11:11:43.518" endtime="20230724 11:11:44.008"/>
-</kw>
-<status status="PASS" starttime="20230724 11:11:27.562" endtime="20230724 11:11:44.009"/>
+<doc>Testar o processo de login com sucesso</doc>
+<status status="FAIL" starttime="20230724 13:19:34.760" endtime="20230724 13:19:42.168">Element with locator '//*[@id="nav-link-accountList-nav-line-1"]' not found.</status>
 </test>
-<status status="PASS" starttime="20230724 11:11:27.334" endtime="20230724 11:11:44.011"/>
+<status status="FAIL" starttime="20230724 13:19:34.533" endtime="20230724 13:19:42.170"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC-01">TC-01</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Credenciais">Credenciais</stat>
 </suite>
 </statistics>
 <errors>
