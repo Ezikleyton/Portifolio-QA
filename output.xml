@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20230722 14:12:28.130" rpa="false" schemaversion="3">
+<suite id="s1" name="TC-01" source="c:\Users\ezikl\OneDrive\Documentos\GitHub\Testes Amazon\Portifolio-QA\Carrinho\TC-01.robot">
+<test id="s1-t1" name="Teste case 1: Adicionar um produto ao carrinho" line="8">
+<kw name="Dado que estou na página inicial da Amazon" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230722 14:12:28.532" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230722 14:12:28.532" endtime="20230722 14:12:30.359"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230722 14:12:30.359" endtime="20230722 14:12:30.477"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL_AMAZON}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230722 14:12:30.479" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<status status="PASS" starttime="20230722 14:12:30.478" endtime="20230722 14:12:32.817"/>
+</kw>
+<status status="PASS" starttime="20230722 14:12:28.531" endtime="20230722 14:12:32.817"/>
+</kw>
+<kw name="Quando pesquiso pelo produto &quot;Nome do Produto&quot;" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BARRA_DE_PESQUISA}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230722 14:12:32.818" endtime="20230722 14:12:32.940"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${produto}</arg>
+<arg>Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230722 14:12:32.941" level="INFO">${produto} = Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta</msg>
+<status status="PASS" starttime="20230722 14:12:32.940" endtime="20230722 14:12:32.941"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${BARRA_DE_PESQUISA}</arg>
+<arg>${produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230722 14:12:32.942" level="INFO">Typing text 'Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta' into text field '//input[contains(@type,'text')]'.</msg>
+<status status="PASS" starttime="20230722 14:12:32.941" endtime="20230722 14:12:33.377"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${BOTAO_DE_PESQUISA}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230722 14:12:33.379" level="INFO">Clicking button '//input[contains(@type,'submit')]'.</msg>
+<status status="PASS" starttime="20230722 14:12:33.378" endtime="20230722 14:12:33.551"/>
+</kw>
+<status status="PASS" starttime="20230722 14:12:32.818" endtime="20230722 14:12:33.551"/>
+</kw>
+<kw name="Então a página de resultados deve exibir os produtos relacionados à pesquisa realizada" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'${produto}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230722 14:12:33.554" endtime="20230722 14:12:35.444"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>locator=//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'${produto}')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230722 14:12:35.461" level="INFO">Current page contains element '//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta')]'.</msg>
+<status status="PASS" starttime="20230722 14:12:35.445" endtime="20230722 14:12:35.462"/>
+</kw>
+<status status="PASS" starttime="20230722 14:12:33.553" endtime="20230722 14:12:35.462"/>
+</kw>
+<kw name="E adiciono o produto ao carrinho" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'${produto}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230722 14:12:35.464" level="INFO">Clicking element '//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta')]'.</msg>
+<status status="PASS" starttime="20230722 14:12:35.464" endtime="20230722 14:12:38.765"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${BOTAO_CARRINHO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230722 14:12:38.766" endtime="20230722 14:12:38.790"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${BOTAO_CARRINHO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230722 14:12:38.791" level="INFO">Clicking element '//input[contains(@name,'submit.add-to-cart')]'.</msg>
+<status status="PASS" starttime="20230722 14:12:38.791" endtime="20230722 14:12:40.072"/>
+</kw>
+<status status="PASS" starttime="20230722 14:12:35.463" endtime="20230722 14:12:40.073"/>
+</kw>
+<kw name="Então o produto é adicionado ao carrinho com sucesso" library="keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>locator=//span[@class='a-size-medium-plus a-color-base sw-atc-text a-text-bold'][contains(.,'Adicionado ao carrinho')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230722 14:12:40.088" level="INFO">Current page contains element '//span[@class='a-size-medium-plus a-color-base sw-atc-text a-text-bold'][contains(.,'Adicionado ao carrinho')]'.</msg>
+<status status="PASS" starttime="20230722 14:12:40.074" endtime="20230722 14:12:40.089"/>
+</kw>
+<status status="PASS" starttime="20230722 14:12:40.073" endtime="20230722 14:12:40.089"/>
+</kw>
+<status status="PASS" starttime="20230722 14:12:28.529" endtime="20230722 14:12:40.090"/>
+</test>
+<status status="PASS" starttime="20230722 14:12:28.150" endtime="20230722 14:12:40.092"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC-01">TC-01</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

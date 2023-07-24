@@ -83,9 +83,10 @@ E preencho o campo de senha incorretamente
 E preencho o campo de senha com senhas diferentes
     
 Então o site deve exibir uma mensagem de erro indicando que "${MENSAGEM_ERRO}"
-
+    
     
 #Alert Should Be Present    Insira seu nome       
 #Alert Should Be Present    Digite seu e-mail ou número de telefone celular
 #Alert Should Be Present    Mínimo de 6 caracteres necessários
 #Alert Should Be Present    As senhas não são iguais
+
