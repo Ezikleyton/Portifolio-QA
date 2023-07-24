@@ -1,6 +1,8 @@
 *** Settings ***    
 Library    SeleniumLibrary
 Resource    keywords.robot
+Test Teardown    Close All Browsers
+
    
 
 *** Test Cases ***
@@ -12,7 +14,7 @@ Teste case 1: Adicionar um produto ao carrinho
     E adiciono o produto ao carrinho
     Então o produto é adicionado ao carrinho com sucesso   
 
-Teste case 2: Adicionar um produto ao carrinho
+Teste case 2: Remover um produto ao carrinho
     Dado que adicionei um produto ao carrinho
     E que estou na página do carrinho
     Quando removo o produto 

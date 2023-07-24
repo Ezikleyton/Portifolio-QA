@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
+Library    XML
 *** Variables ***
 ${URL_AMAZON}          https://www.amazon.com.br/
 ${BARRA_DE_PESQUISA}   //input[contains(@type,'text')]
@@ -22,7 +23,7 @@ Quando digito um termo de pesquisa na barra de pesquisa
 
 Quando eu pesquiso por um produto que não existe na barra de pesquisa
     Wait Until Element Is Visible    ${BARRA_DE_PESQUISA}
-    ${produto_aleatorio}  Generate Random String    length=8    chars=[LETTERS]
+    ${produto_aleatorio}  Generate Random String    length=12    chars=[NUMBERS]
     Set Test Variable    ${produto_aleatorio}    
     Input Text    ${BARRA_DE_PESQUISA}    ${produto_aleatorio}
 
@@ -43,17 +44,11 @@ Então a página de resultados deve exibir apenas ${produto} da categoria seleci
 
 Então a página de resultados deve uma mensagem de erro
     Sleep    time_=5
-    Page Should Contain    text=Nenhum resultado para
-    
-Quando digito um código de produto válido na barra de pesquisa
-  
-   
-Então devo ver o produto correspondente ao código de produto nos resultados da pesquisa
-
-E utilizo os filtros disponíveis para refinar a pesquisa
-    
-Então devo ver resultados filtrados de acordo com os critérios especificados nos filtros
-    
+    Page Should Contain    text=Nenhum resultado para ${produto_aleatorio}
+        
 Quando começo a digitar um termo de pesquisa parcial na barra de pesquisa
-
+    Input Text    locator=${BARRA_DE_PESQUISA}    text=echo 
+    
  Então devo ver uma lista de sugestões automáticas relacionadas ao termo de pesquisa parcialmente digitado
+    Wait Until Element Is Visible    locator=//div[contains(@class,'left-pane-results-container')]
+    Element Should Contain    locator=//div[contains(@class,'left-pane-results-container')]    expected=echo dot 

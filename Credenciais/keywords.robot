@@ -25,12 +25,14 @@ Dado que estou na página de login
     Maximize Browser Window
     Go To    ${URL_LOGIN}   
 
-Quando insiro um e-mail válido    
+Quando insiro um e-mail válido 
+    #No campo Text deve ser inserido um email valido e cadastrado no site.   
     Wait Until Page Contains Element    locator=${EMAIL_LOGIN}
-    Input Text    locator=${EMAIL_LOGIN}    text=teste@robot.com
+    Input Text    locator=${EMAIL_LOGIN}    text=testes@testes.com
 E insiro uma senha válida
+    #No campo Text deve ser inserido uma senha valida e cadastrado no site.  
     Wait Until Element Is Visible    locator=${CAMPO_SENHA}
-    Input Password    locator=${CAMPO_SENHA}    password=123456789
+    Input Password    locator=${CAMPO_SENHA}    password=testestestes
 
 E clico no botão de continuar
     Wait Until Element Is Visible    locator=${CONTINUAR_LOGIN}
@@ -38,9 +40,12 @@ E clico no botão de continuar
 E clico no botão de login    
     Wait Until Element Is Visible    locator=${BOTAO_FAZER_LOGIN}
     Click Element    locator=${BOTAO_FAZER_LOGIN}
+
+
 Então o site deve ter o usuário logado
+    #No campo expected inserir um usuario esperado.
     Sleep    time_=1 
-    Element Should Contain    locator=//*[@id="nav-link-accountList-nav-line-1"]    expected=Olá, USUARIO  
+    Element Should Contain    locator=//*[@id="nav-link-accountList-nav-line-1"]    expected=Olá, ###Nome do usuario esperado###  
 
 E clico na opção de esquecer a senha    
     Wait Until Element Is Visible    locator=${BOTAO_ESQUECI_SENHA}
@@ -63,7 +68,8 @@ Quando preencho todos os campos com dados válidos
     
 E clico no botão de verificar email
     Click Element    locator=${BOTAO_VERIFICAR_EMAIL}
-Então o site deve criar a conta com sucesso    
+Então o site deve criar a conta com sucesso
+    Page Should Contain    text=Conta Criada    
     
 Quando preencho todos os campos com dados já cadastrados
     Input Text    locator=${INPUT_NOME}    text=robot  
@@ -78,11 +84,20 @@ Então o site deve exibir uma mensagem de erro "${mensagem_erro}"
     Sleep    time_=2
     Page Should Contain    text=${mensagem_erro}
 
-E preencho o campo de senha incorretamente   
+E preencho o campo de senha incorretamente    
+    Input Text    ${INPUT_SENHA}    text=12345
+    Input Password    ${INPUT_CHECK_SENHA}    password=12345
+    
+     
+       
   
 E preencho o campo de senha com senhas diferentes
+    Input Text    ${INPUT_SENHA}    text=12345678
+    Input Password    ${INPUT_CHECK_SENHA}    password=123456
     
 Então o site deve exibir uma mensagem de erro indicando que "${MENSAGEM_ERRO}"
+    Sleep    time_=2
+    Page Should Contain    text=${MENSAGEM_ERRO}
     
     
 #Alert Should Be Present    Insira seu nome       

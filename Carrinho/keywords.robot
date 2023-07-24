@@ -41,7 +41,8 @@ Dado que adicionei um produto ao carrinho
     E adiciono o produto ao carrinho    
     
 E que estou na página do carrinho
-    Click Element    locator=//*[@id="sw-gtc"]/span/a
+    Wait Until Element Is Visible    locator=//a[@data-csa-c-type='button']
+    Click Element    locator=//a[@data-csa-c-type='button']
 Quando removo o produto 
     Sleep    time_=1
     Click Element    locator=${EXCLUIR_DO_CARRINHO}

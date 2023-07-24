@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20230724 11:04:07.096" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\ezikl\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Dado que estou na página de criação de conta da Amazon">
+<msg timestamp="20230724 11:04:07.891" level="FAIL">No keyword with name 'Dado que estou na página de criação de conta da Amazon' found.</msg>
+<status status="FAIL" starttime="20230724 11:04:07.891" endtime="20230724 11:04:07.891"/>
+</kw>
+<kw name="Quando preencho todos os campos com dados válidos">
+<status status="NOT RUN" starttime="20230724 11:04:07.893" endtime="20230724 11:04:07.893"/>
+</kw>
+<kw name="E preencho o campo de senha com senhas diferentes">
+<status status="NOT RUN" starttime="20230724 11:04:07.894" endtime="20230724 11:04:07.894"/>
+</kw>
+<kw name="E clico no botão de verificar email">
+<status status="NOT RUN" starttime="20230724 11:04:07.894" endtime="20230724 11:04:07.894"/>
+</kw>
+<kw name="Então o site deve exibir uma mensagem de erro indicando que &quot;As senhas não são iguais&quot;">
+<status status="NOT RUN" starttime="20230724 11:04:07.895" endtime="20230724 11:04:07.895"/>
+</kw>
+<status status="PASS" starttime="20230724 11:04:07.120" endtime="20230724 11:04:09.886"/>
+</kw>
+<status status="PASS" starttime="20230724 11:04:07.119" endtime="20230724 11:04:09.886"/>
+</test>
+<status status="PASS" starttime="20230724 11:04:07.098" endtime="20230724 11:04:09.887"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
