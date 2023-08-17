@@ -35,7 +35,7 @@ Realizei testes de carga e estresse em um aplicativo web usando o JMeter para av
 
 Fique à vontade para entrar em contato comigo para discutir qualquer um dos projetos ou para colaborações futuras. Você pode me encontrar em:
 
-- Email: [ezikleyton@gmail.com](mailto:seu.email@gmail.com)
+- Email: [ezikleyton@gmail.com](mailto:ezikleyton@gmail.com)
 - LinkedIn: [Ezikleyton Silva](https://www.linkedin.com/in/ezikleyton-silva/)
 
 ## Conclusão
