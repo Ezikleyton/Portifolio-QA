@@ -4,6 +4,7 @@ Resource            keywords.robot
 Test Setup          Open Browser    browser=chrome   
 Test Teardown       Close All Browsers
 
+
    
 
 *** Test Cases ***

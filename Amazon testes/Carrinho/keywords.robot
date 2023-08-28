@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    OperatingSystem
 *** Variables ***
 ${URL_AMAZON}              https://www.amazon.com.br/
 ${BARRA_DE_PESQUISA}       //input[contains(@type,'text')]
@@ -12,10 +13,16 @@ ${PRODUTO}                 Xbox
 
 *** Keywords ***
 
+Atualizar pagina.
+    Reload Page
+
 
 Dado que estou na página inicial da Amazon 
     Maximize Browser Window
     Go To                               ${URL_AMAZON}
+    ${captcha_encontrado}    Run Keyword And Return Status    Page Should Contain    text=Continuar comprando
+    Run Keyword If    ${captcha_encontrado}    Atualizar pagina.
+   
 
 Quando pesquiso pelo produto
     Wait Until Element Is Visible       ${BARRA_DE_PESQUISA}  
