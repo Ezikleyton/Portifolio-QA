@@ -1,7 +1,7 @@
 *** Settings ***
-Library    SeleniumLibrary
-Resource    keywords.robot
-Test Teardown    Close All Browsers
+Library           SeleniumLibrary
+Resource          keywords.robot
+Test Teardown     Close All Browsers
 
 *** Test Cases ***
 #Campos de login são otimos para execução de varios cenarios, porem a Amazon requer codigos de verificação, sendo assim inviaveis a realização alguns testes e alguns não foram realizados em sua totalidade.
