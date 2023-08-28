@@ -1,7 +1,7 @@
 # Projeto de Automação de Testes - Portfólio
 
 ## 📋 Visão Geral
-Este documento descreve o projeto de automação de testes no site da Amazon, criado para fins de portfólio pessoal. O projeto abrange a automação das funcionalidades de busca de produto, cálculo de frete por CEP, cadastro e login de usuários. O objetivo é demonstrar minhas habilidades em automação de testes e garantir a qualidade das funcionalidades testadas.
+Este documento descreve o projeto de automação de testes no site da Amazon, criado para fins de portfólio pessoal. O projeto abrange a automação das funcionalidades de busca de produto, manipulçao de produtos no carrinho, cadastro e login de usuários. O objetivo é demonstrar minhas habilidades em automação de testes e garantir a qualidade das funcionalidades testadas.
 
 ## 🚀 Funcionalidades Testadas
 O projeto de automação de testes abrange as seguintes funcionalidades:
