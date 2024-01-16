@@ -50,8 +50,5 @@ A comunicação ocorrerá através de:
 - Atualizações do projeto no repositório do GitHub.
 - Documentação detalhada nos relatórios de testes automatizados.
 
-## 📝 Controle de Versão
-Mantenha este documento e os scripts de automação sob controle de versão para rastrear alterações ao longo do projeto.
-
 ## 🏁 Conclusão
 Este projeto de automação de testes no site da Amazon foi desenvolvido como parte do meu portfólio pessoal para demonstrar minhas habilidades em automação de testes. Mantenha o projeto atualizado e utilize-o como uma peça central do seu portfólio.
